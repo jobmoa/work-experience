@@ -1,0 +1,99 @@
+
+/* 기본 스타일 */
+.custom-header {
+    position: relative;
+    text-align: center;
+    padding: 2em 1em;
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center;
+    background-size: cover;
+    height: 300px; /* 기본 높이 */
+    color: #fff;
+}
+
+.custom-header .header-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.custom-header .header-content nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.custom-header .header-content nav ul li {
+    margin: 0 1em;
+}
+
+/* 반응형 처리 */
+@media (max-width: 1024px) {
+    .custom-header {
+        height: 250px;
+        background-size: contain;
+    }
+    .custom-header .header-content h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-header {
+        height: 200px;
+        padding: 1em;
+    }
+    .custom-header .header-content h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-header {
+        height: 150px;
+        padding: 0.5em;
+    }
+    .custom-header .header-content h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 360px) {
+    .custom-header {
+        height: 120px;
+    }
+    .custom-header .header-content h1 {
+        font-size: 1em;
+    }
+}
+
+
+.custom-icon-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+}
+
+.custom-icon-list li {
+    opacity: 0;
+    transform: translateY(20px); /* 기본 상태에서 아래로 이동 */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.custom-icon-list li img {
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+}
+
+.custom-icon-list li.visible {
+    opacity: 1;
+    transform: translateY(0); /* 화면에 나타날 때 원래 위치로 */
+}
+
+.custom-icon-list li.exiting {
+    opacity: 0;
+    transform: translateY(40px); /* 화면에서 벗어날 때 아래로 이동 */
+}
